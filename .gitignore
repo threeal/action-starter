@@ -1,0 +1,7 @@
+.*
+!.eslint*
+!.git*
+
+coverage/
+docs/
+node_modules/
