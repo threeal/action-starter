@@ -1,5 +1,6 @@
-# Node.js Starter
+# Action Starter
 
-[![CI status](https://img.shields.io/github/actions/workflow/status/threeal/nodejs-starter/ci.yaml?branch=main&label=CI&style=flat-square)](https://github.com/threeal/nodejs-starter/actions/workflows/ci.yaml)
+[![CI status](https://img.shields.io/github/actions/workflow/status/threeal/action-starter/ci.yaml?branch=main&label=CI&style=flat-square)](https://github.com/threeal/action-starter/actions/workflows/ci.yaml)
 
-Kickstart your [Node.js](https://nodejs.org/en) project using this [GitHub repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template). This repository provides a minimalistic template for Node.js, featuring support for [TypeScript](https://www.typescriptlang.org/) compilation, [Prettier](https://prettier.io/) for code formatting, [ESLint](https://eslint.org/) for static linting, and [Jest](https://jestjs.io/) for testing.
+The Action Starter is a [GitHub repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) that provides a minimalistic boilerplate to kickstart your [GitHub Action](https://github.com/features/actions) project.
+Use this template to initialize your project with predefined file structures and preconfigured settings recommended for a GitHub Action project.
