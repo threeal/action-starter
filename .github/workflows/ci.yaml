@@ -47,8 +47,5 @@ jobs:
       - name: Check diff
         run: git diff --exit-code HEAD
 
-      - name: Generate docs
-        run: yarn doc
-
       - name: Test lib
         run: yarn test
