@@ -5,10 +5,6 @@
     "ecmaVersion": 2022,
     "sourceType": "module"
   },
-  "rules": {
-    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
-    "one-var": ["error", "never"]
-  },
   "overrides": [
     {
       "files": ["**/*.mts", "**/*.ts"],
