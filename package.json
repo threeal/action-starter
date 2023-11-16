@@ -23,7 +23,7 @@
   "scripts": {
     "build": "tsc",
     "bundle": "ncc build dist/bin.mjs -o bin",
-    "clean": "rimraf dist",
+    "clean": "rimraf bin dist",
     "format": "prettier --write . !dist",
     "lint": "eslint src",
     "sort": "sort-package-json",
