@@ -3,7 +3,7 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "format", "lint", "sort"]
+        "cacheableOperations": ["build", "bundle", "format", "lint", "sort"]
       }
     }
   },
@@ -16,6 +16,14 @@
       "inputs": [
         "dependencies",
         "{projectRoot}/src/**/*",
+        "{projectRoot}/tsconfig.json"
+      ]
+    },
+    "bundle": {
+      "dependsOn": ["build"],
+      "inputs": [
+        "dependencies",
+        "{projectRoot}/dist/**/*",
         "{projectRoot}/tsconfig.json"
       ]
     },
