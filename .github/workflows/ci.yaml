@@ -41,8 +41,8 @@ jobs:
       - name: Clean dist
         run: yarn clean
 
-      - name: Build dist
-        run: yarn nx build
+      - name: Bundle dist
+        run: yarn nx bundle
 
       - name: Check diff
         run: git diff --exit-code HEAD
