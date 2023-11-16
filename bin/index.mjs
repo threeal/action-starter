@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { createRequire as __WEBPACK_EXTERNAL_createRequire } from "module";
 /******/ /* webpack/runtime/compat */
 /******/ 
