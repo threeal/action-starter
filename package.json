@@ -16,12 +16,14 @@
   "author": "Alfi Maulana <alfi.maulana.f@gmail.com>",
   "type": "module",
   "main": "dist/index.js",
+  "bin": "dist/bin.mjs",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsc",
-    "clean": "rimraf dist",
+    "bundle": "ncc build dist/bin.mjs -o bin",
+    "clean": "rimraf bin dist",
     "format": "prettier --write . !dist",
     "lint": "eslint src",
     "sort": "sort-package-json",
@@ -33,6 +35,7 @@
     "@types/node": "^20.9.0",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
+    "@vercel/ncc": "^0.38.1",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-tsdoc": "^0.2.17",

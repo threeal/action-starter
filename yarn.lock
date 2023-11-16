@@ -1255,6 +1255,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/ncc@npm:^0.38.1":
+  version: 0.38.1
+  resolution: "@vercel/ncc@npm:0.38.1"
+  dependencies:
+    node-gyp: "npm:latest"
+  bin:
+    ncc: dist/ncc/cli.js
+  checksum: 3e6c08251ccc8c6c7ca6523f223e326c70950af787259252c8a19ef04a7f8cc4c42d4c1ddb94f227a9d0d1c5429f71e303daf6a356948b4f81bcd38d075c9b24
+  languageName: node
+  linkType: hard
+
 "@yarnpkg/lockfile@npm:^1.1.0":
   version: 1.1.0
   resolution: "@yarnpkg/lockfile@npm:1.1.0"
@@ -1317,6 +1328,7 @@ __metadata:
     "@types/node": "npm:^20.9.0"
     "@typescript-eslint/eslint-plugin": "npm:^6.10.0"
     "@typescript-eslint/parser": "npm:^6.10.0"
+    "@vercel/ncc": "npm:^0.38.1"
     eslint: "npm:^8.53.0"
     eslint-config-prettier: "npm:^9.0.0"
     eslint-plugin-tsdoc: "npm:^0.2.17"
@@ -1327,6 +1339,8 @@ __metadata:
     sort-package-json: "npm:^2.6.0"
     ts-jest: "npm:^29.1.1"
     typescript: "npm:^5.2.2"
+  bin:
+    action-starter: dist/bin.mjs
   languageName: unknown
   linkType: soft
 
