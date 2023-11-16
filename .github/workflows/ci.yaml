@@ -49,3 +49,6 @@ jobs:
 
       - name: Test lib
         run: yarn test
+
+      - name: Run bin
+        run: node bin/index.mjs temp
