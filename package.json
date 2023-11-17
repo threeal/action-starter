@@ -26,6 +26,7 @@
     "clean": "rimraf bin dist",
     "format": "prettier --write . !dist",
     "lint": "eslint src",
+    "prepack": "nx build",
     "sort": "sort-package-json",
     "test": "jest"
   },
