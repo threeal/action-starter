@@ -3,5 +3,8 @@
 !.git*
 
 coverage/
+dist/
 docs/
 node_modules/
+
+package.tgz
