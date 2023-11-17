@@ -49,3 +49,23 @@ jobs:
 
       - name: Run bin
         run: node bin/index.mjs temp
+
+  test-action:
+    name: Test Action
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows, ubuntu, macos]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Create Directory
+        uses: ./
+        with:
+          path: parent/child
+
+      - name: Check Directory
+        shell: bash
+        run: test -d parent/child
