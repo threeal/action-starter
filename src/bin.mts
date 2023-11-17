@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import core from "@actions/core";
 import { mkdirRecursive } from "./mkdir.mjs";
 
-mkdirRecursive(process.argv[2]);
+const path = core.getInput("path", { required: true });
+mkdirRecursive(path);
