@@ -47,9 +47,6 @@ jobs:
       - name: Test lib
         run: yarn test
 
-      - name: Run bin
-        run: node bin/index.mjs temp
-
   test-action:
     name: Test Action
     runs-on: ${{ matrix.os }}-latest
