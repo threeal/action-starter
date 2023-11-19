@@ -22,10 +22,8 @@
   ],
   "scripts": {
     "bundle": "tsc && ncc build dist/bin.mjs -o bin",
-    "format": "prettier --write . !dist",
-    "lint": "eslint src",
+    "check": "sort-package-json && prettier --write . !dist && eslint src",
     "prepack": "tsc",
-    "sort": "sort-package-json",
     "test": "jest"
   },
   "dependencies": {
