@@ -38,6 +38,9 @@ jobs:
       - name: Install deps
         run: yarn install
 
+      - name: Check lib
+        run: yarn check
+
       - name: Bundle dist
         run: yarn bundle
 
