@@ -21,11 +21,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
     "bundle": "tsc && ncc build dist/bin.mjs -o bin",
     "format": "prettier --write . !dist",
     "lint": "eslint src",
-    "prepack": "npm run build",
+    "prepack": "tsc",
     "sort": "sort-package-json",
     "test": "jest"
   },
