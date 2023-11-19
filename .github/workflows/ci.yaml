@@ -39,7 +39,7 @@ jobs:
         run: yarn install
 
       - name: Bundle dist
-        run: yarn nx bundle
+        run: yarn bundle
 
       - name: Check diff
         if: matrix.os == 'ubuntu'
