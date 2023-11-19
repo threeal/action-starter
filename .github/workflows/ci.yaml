@@ -38,8 +38,11 @@ jobs:
       - name: Install deps
         run: yarn install
 
+      - name: Check lib
+        run: yarn check
+
       - name: Bundle dist
-        run: yarn nx bundle
+        run: yarn bundle
 
       - name: Check diff
         if: matrix.os == 'ubuntu'
