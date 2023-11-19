@@ -1255,8 +1255,6 @@ __metadata:
     sort-package-json: "npm:^2.6.0"
     ts-jest: "npm:^29.1.1"
     typescript: "npm:^5.2.2"
-  bin:
-    action-starter: dist/bin.mjs
   languageName: unknown
   linkType: soft
 
