@@ -25,7 +25,7 @@
     "bundle": "tsc && ncc build dist/bin.mjs -o bin",
     "format": "prettier --write . !dist",
     "lint": "eslint src",
-    "prepack": "nx build",
+    "prepack": "npm run build",
     "sort": "sort-package-json",
     "test": "jest"
   },
@@ -43,12 +43,10 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-tsdoc": "^0.2.17",
     "jest": "^29.7.0",
-    "nx": "17.1.2",
     "prettier": "^3.1.0",
     "sort-package-json": "^2.6.0",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
   },
-  "packageManager": "yarn@4.0.2",
-  "nx": {}
+  "packageManager": "yarn@4.0.2"
 }
