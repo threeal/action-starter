@@ -18,3 +18,7 @@ This template offers a streamlined foundation, complete with predefined file str
   - Code formatting with [Prettier](https://prettier.io/).
 - Preconfigured GitHub Actions workflow for testing your action.
 - [Dependabot](https://docs.github.com/en/code-security/dependabot) support for dependency updates.
+
+## Usage
+
+Refer to [this wiki](https://github.com/threeal/action-starter/wiki) for information on how to use this template.
