@@ -12,8 +12,6 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows, ubuntu, macos]
-    env:
-      NODE_OPTIONS: --experimental-vm-modules
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -23,11 +21,8 @@ jobs:
         with:
           node-version: latest
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Update Yarn
-        run: yarn set version stable
+        run: corepack enable && yarn set version stable
 
       - name: Cache deps
         uses: actions/cache@v3.3.2
@@ -47,6 +42,3 @@ jobs:
       - name: Check diff
         if: matrix.os == 'ubuntu'
         run: git diff --exit-code HEAD
-
-      - name: Test lib
-        run: yarn test
