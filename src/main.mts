@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import core from "@actions/core";
 import { mkdirRecursive } from "./mkdir.mjs";
 

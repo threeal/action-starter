@@ -13,4 +13,4 @@ inputs:
     required: true
 runs:
   using: node20
-  main: bin/index.mjs
+  main: main/index.mjs

@@ -1,1 +1,1 @@
-bin/index.mjs -diff linguist-generated=true
+main/index.mjs -diff linguist-generated=true
