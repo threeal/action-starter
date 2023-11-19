@@ -6,7 +6,7 @@
 [![test status](https://img.shields.io/github/actions/workflow/status/threeal/action-starter/test.yaml?branch=main&label=test&style=flat-square)](https://github.com/threeal/action-starter/actions/workflows/test.yaml)
 
 The Action Starter is a [GitHub repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) that provides a minimalistic boilerplate to kickstart your [GitHub Action](https://github.com/features/actions) project.
-Use this template to initialize your project with predefined file structures and preconfigured settings recommended for a GitHub Action project.
+This template offers a streamlined foundation, complete with predefined file structures, essential tools, and recommended settings, ensuring a swift and efficient start to your GitHub Action development journey.
 
 ## Key Features
 
