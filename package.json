@@ -1,28 +1,10 @@
 {
   "name": "action-starter",
-  "version": "0.1.0",
-  "description": "A GitHub Action starter project",
-  "keywords": [
-    "keyword",
-    "other-keyword"
-  ],
-  "homepage": "https://github.com/threeal/action-starter#readme",
-  "bugs": {
-    "url": "https://github.com/threeal/action-starter/issues",
-    "email": "threeal@github.com"
-  },
-  "repository": "github:threeal/action-starter",
-  "license": "Unlicense",
-  "author": "Alfi Maulana <alfi.maulana.f@gmail.com>",
+  "private": true,
   "type": "module",
-  "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "bundle": "tsc && ncc build dist/main.mjs -o main",
     "check": "sort-package-json && prettier --write . !main && eslint src",
-    "prepack": "tsc",
     "test": "jest"
   },
   "dependencies": {
