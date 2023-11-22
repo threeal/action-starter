@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: latest
 
-      - name: Update Yarn
-        run: corepack enable && yarn set version stable
+      - name: Enable and Update Yarn
+        run: corepack enable yarn && yarn set version stable
 
       - name: Cache deps
         uses: actions/cache@v3.3.2
