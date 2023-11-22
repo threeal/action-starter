@@ -23,16 +23,19 @@ jobs:
         with:
           node-version: latest
 
-      - name: Cache deps
+      - name: Enable Yarn
+        run: corepack enable yarn
+
+      - name: Cache Dependencies
         uses: actions/cache@v3.3.2
         with:
           path: .yarn
           key: yarn-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
-      - name: Install deps
-        run: corepack enable && yarn install
+      - name: Install Dependencies
+        run: yarn install
 
-      - name: Test lib
+      - name: Test Package
         run: yarn test
 
   test-action:
