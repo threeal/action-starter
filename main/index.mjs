@@ -26010,12 +26010,12 @@ var external_fs_ = __nccwpck_require__(7147);
 function mkdirRecursive(path) {
     external_fs_.mkdirSync(path, { recursive: true });
 }
-//# sourceMappingURL=mkdir.mjs.map
+
 ;// CONCATENATED MODULE: ./dist/main.mjs
 
 
 const path = core.getInput("path", { required: true });
 mkdirRecursive(path);
-//# sourceMappingURL=main.mjs.map
+
 })();
 
