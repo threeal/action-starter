@@ -77,11 +77,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+        with:
+          path: mkdir-action
 
       - name: Create Directory
-        uses: ./
+        uses: ./mkdir-action
         with:
           path: parent/child
+          sparse-checkout: |
+            action.yaml
+            main
 
       - name: Check Directory
         shell: bash
