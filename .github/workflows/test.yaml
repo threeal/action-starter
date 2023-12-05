@@ -84,6 +84,9 @@ jobs:
         uses: ./mkdir-action
         with:
           path: parent/child
+          sparse-checkout: |
+            action.yaml
+            main
 
       - name: Check Directory
         shell: bash
