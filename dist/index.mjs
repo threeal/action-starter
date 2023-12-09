@@ -26018,7 +26018,7 @@ async function main() {
     const path = core.getInput("path", { required: true });
     mkdirRecursive(path);
 }
-main();
+main().catch((err) => core.setFailed(err));
 
 })();
 

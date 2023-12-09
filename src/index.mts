@@ -6,4 +6,4 @@ async function main() {
   mkdirRecursive(path);
 }
 
-main();
+main().catch((err) => core.setFailed(err));
