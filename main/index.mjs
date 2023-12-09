@@ -26011,7 +26011,7 @@ function mkdirRecursive(path) {
     external_fs_.mkdirSync(path, { recursive: true });
 }
 
-;// CONCATENATED MODULE: ./dist/main.mjs
+;// CONCATENATED MODULE: ./dist/index.mjs
 
 
 const path = core.getInput("path", { required: true });
