@@ -26000,7 +26000,7 @@ var __webpack_exports__ = {};
 var core = __nccwpck_require__(4278);
 // EXTERNAL MODULE: external "fs"
 var external_fs_ = __nccwpck_require__(7147);
-;// CONCATENATED MODULE: ./dist/mkdir.mjs
+;// CONCATENATED MODULE: ./src/mkdir.mjs
 
 /**
  * Creates a directory recursively.
@@ -26011,7 +26011,7 @@ function mkdirRecursive(path) {
     external_fs_.mkdirSync(path, { recursive: true });
 }
 
-;// CONCATENATED MODULE: ./dist/index.mjs
+;// CONCATENATED MODULE: ./src/index.mjs
 
 
 const path = core.getInput("path", { required: true });
