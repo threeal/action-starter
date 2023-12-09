@@ -26014,8 +26014,11 @@ function mkdirRecursive(path) {
 ;// CONCATENATED MODULE: ./src/index.mjs
 
 
-const path = core.getInput("path", { required: true });
-mkdirRecursive(path);
+async function main() {
+    const path = core.getInput("path", { required: true });
+    mkdirRecursive(path);
+}
+main().catch((err) => core.setFailed(err));
 
 })();
 
