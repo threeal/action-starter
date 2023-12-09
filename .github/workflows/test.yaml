@@ -79,14 +79,14 @@ jobs:
         uses: actions/checkout@v4.1.1
         with:
           path: mkdir-action
+          sparse-checkout: |
+            action.yaml
+            dist
 
       - name: Create Directory
         uses: ./mkdir-action
         with:
           path: parent/child
-          sparse-checkout: |
-            action.yaml
-            dist
 
       - name: Check Directory
         shell: bash
