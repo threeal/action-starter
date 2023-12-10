@@ -7,6 +7,5 @@
       "lines": 100,
       "statements": 100
     }
-  },
-  "testMatch": ["**/*.test.js"]
+  }
 }
