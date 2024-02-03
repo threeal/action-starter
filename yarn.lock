@@ -1272,25 +1272,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"action-starter@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "action-starter@workspace:."
-  dependencies:
-    "@actions/core": "npm:^1.10.1"
-    "@types/node": "npm:^20.11.7"
-    "@typescript-eslint/eslint-plugin": "npm:^6.19.1"
-    "@typescript-eslint/parser": "npm:^6.19.1"
-    "@vercel/ncc": "npm:^0.38.1"
-    eslint: "npm:^8.56.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-json-files: "npm:^4.1.0"
-    eslint-plugin-tsdoc: "npm:^0.2.17"
-    jest: "npm:^29.7.0"
-    prettier: "npm:^3.2.4"
-    typescript: "npm:^5.3.3"
-  languageName: unknown
-  linkType: soft
-
 "agent-base@npm:6, agent-base@npm:^6.0.2":
   version: 6.0.2
   resolution: "agent-base@npm:6.0.2"
@@ -4199,6 +4180,25 @@ __metadata:
   checksum: 9cb7757acb489bd83757ba1a274ab545eafd75598a9d817e0c3f8b164238dd90eba50d6b848bd4dcc5f3040912e882dc7ba71653e35af660d77b25c381d402e8
   languageName: node
   linkType: hard
+
+"root-workspace-0b6124@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "root-workspace-0b6124@workspace:."
+  dependencies:
+    "@actions/core": "npm:^1.10.1"
+    "@types/node": "npm:^20.11.7"
+    "@typescript-eslint/eslint-plugin": "npm:^6.19.1"
+    "@typescript-eslint/parser": "npm:^6.19.1"
+    "@vercel/ncc": "npm:^0.38.1"
+    eslint: "npm:^8.56.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-json-files: "npm:^4.1.0"
+    eslint-plugin-tsdoc: "npm:^0.2.17"
+    jest: "npm:^29.7.0"
+    prettier: "npm:^3.2.4"
+    typescript: "npm:^5.3.3"
+  languageName: unknown
+  linkType: soft
 
 "run-parallel@npm:^1.1.9":
   version: 1.2.0
