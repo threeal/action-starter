@@ -2,10 +2,6 @@
   "root": true,
   "ignorePatterns": ["dist"],
   "extends": ["eslint:recommended"],
-  "parserOptions": {
-    "ecmaVersion": 2022,
-    "sourceType": "module"
-  },
   "overrides": [
     {
       "files": ["**/*.?([cm])ts"],
@@ -13,12 +9,6 @@
       "plugins": ["eslint-plugin-tsdoc"],
       "rules": {
         "tsdoc/syntax": "error"
-      }
-    },
-    {
-      "files": ["**/*.test.*"],
-      "env": {
-        "jest": true
       }
     },
     {
