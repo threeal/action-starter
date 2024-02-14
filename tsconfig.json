@@ -1,4 +1,6 @@
 {
+  "include": ["src"],
+  "exclude": ["**/*.test.*"],
   "compilerOptions": {
     "exactOptionalPropertyTypes": true,
     "strict": true,
@@ -6,6 +8,5 @@
     "esModuleInterop": true,
     "target": "es2022",
     "skipLibCheck": true
-  },
-  "include": ["src"]
+  }
 }
