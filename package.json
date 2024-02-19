@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc && ncc build src/index.mjs",
+    "build": "tsc && ncc build src/index.js",
     "format": "prettier --write --cache . !dist",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "jest"
