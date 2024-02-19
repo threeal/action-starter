@@ -1,6 +1,4 @@
 {
-  "include": ["src"],
-  "exclude": ["**/*.test.*"],
   "compilerOptions": {
     "exactOptionalPropertyTypes": true,
     "strict": true,
