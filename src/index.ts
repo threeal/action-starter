@@ -1,5 +1,5 @@
-import core from "@actions/core";
-import { mkdirRecursive } from "./mkdir.mjs";
+import * as core from "@actions/core";
+import { mkdirRecursive } from "./mkdir.js";
 
 async function main() {
   const path = core.getInput("path", { required: true });

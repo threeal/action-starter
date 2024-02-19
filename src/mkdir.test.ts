@@ -1,6 +1,6 @@
 import * as path from "path";
 import fs from "fs";
-import { mkdirRecursive } from "./mkdir.mjs";
+import { mkdirRecursive } from "./mkdir.js";
 import os from "os";
 
 describe("create directory", () => {
