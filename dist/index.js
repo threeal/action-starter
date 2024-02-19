@@ -26027,7 +26027,6 @@ var __webpack_exports__ = {};
 
 // EXTERNAL MODULE: ./.yarn/cache/@actions-core-npm-1.10.1-3cb1000b4d-7a61446697.zip/node_modules/@actions/core/lib/core.js
 var core = __nccwpck_require__(4278);
-var core_default = /*#__PURE__*/__nccwpck_require__.n(core);
 // EXTERNAL MODULE: external "fs"
 var external_fs_ = __nccwpck_require__(7147);
 var external_fs_default = /*#__PURE__*/__nccwpck_require__.n(external_fs_);
@@ -26046,10 +26045,10 @@ function mkdirRecursive(path) {
 
 
 async function main() {
-    const path = core_default().getInput("path", { required: true });
+    const path = core.getInput("path", { required: true });
     mkdirRecursive(path);
 }
-main().catch((err) => core_default().setFailed(err));
+main().catch((err) => core.setFailed(err));
 
 })();
 
