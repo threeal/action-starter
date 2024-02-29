@@ -1,23 +1,19 @@
-import * as path from "path";
-import fs from "fs";
-import { mkdirRecursive } from "./mkdir.js";
-import os from "os";
+import { jest } from "@jest/globals";
 
-describe("create directory", () => {
-  const dirname = path.join(os.tmpdir(), "parent", "child");
+jest.unstable_mockModule("fs", () => ({
+  default: {
+    mkdirSync: jest.fn(),
+  },
+}));
 
-  beforeAll(() => {
-    fs.rmSync(dirname, { force: true, recursive: true });
-  });
-  afterAll(() => {
-    fs.rmSync(dirname, { force: true, recursive: true });
-  });
+it("should create a directory recursively", async () => {
+  const fs = (await import("fs")).default;
+  const { mkdirRecursive } = await import("./mkdir.js");
 
-  it("should create a temporary directory", () => {
-    fs.rmSync(dirname, { force: true, recursive: true });
-    expect(fs.existsSync(dirname)).toBe(false);
+  mkdirRecursive("path/to/new/directory");
 
-    mkdirRecursive(dirname);
-    expect(fs.existsSync(dirname)).toBe(true);
+  expect(fs.mkdirSync).toHaveBeenCalledTimes(1);
+  expect(fs.mkdirSync).toHaveBeenLastCalledWith("path/to/new/directory", {
+    recursive: true,
   });
 });
