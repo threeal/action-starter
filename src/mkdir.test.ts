@@ -1,4 +1,5 @@
 import { jest } from "@jest/globals";
+import "jest-extended";
 
 jest.unstable_mockModule("fs", () => ({
   default: {
@@ -12,8 +13,8 @@ it("should create a directory recursively", async () => {
 
   mkdirRecursive("path/to/new/directory");
 
-  expect(fs.mkdirSync).toHaveBeenCalledTimes(1);
-  expect(fs.mkdirSync).toHaveBeenLastCalledWith("path/to/new/directory", {
-    recursive: true,
-  });
+  expect(fs.mkdirSync).toHaveBeenCalledExactlyOnceWith(
+    "path/to/new/directory",
+    { recursive: true },
+  );
 });
