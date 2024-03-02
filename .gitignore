@@ -2,7 +2,6 @@
 !.env.yarn
 !.eslint*
 !.git*
-!.yarnrc.yml
 
 coverage/
 node_modules/
