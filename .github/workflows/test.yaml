@@ -63,7 +63,7 @@ jobs:
         with:
           path: mkdir-action
           sparse-checkout: |
-            action.yaml
+            action.yml
             dist
           sparse-checkout-cone-mode: false
 
