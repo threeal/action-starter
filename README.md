@@ -4,14 +4,15 @@ A minimalistic [GitHub repository template](https://docs.github.com/en/repositor
 
 ## Key Features
 
-- Predefined GitHub Actions metadata file that you can easily modify.
-- Develop logic for your action using [TypeScript](https://www.typescriptlang.org/) in a [Node.js](https://nodejs.org/en) package, featuring:
-  - Project and dependency management via [Yarn](https://yarnpkg.com/).
-  - Unit testing facilitated by [Jest](https://jestjs.io/).
-  - Static analysis using [ESLint](https://eslint.org/).
-  - Code formatting with [Prettier](https://prettier.io/).
-- Preconfigured GitHub Actions workflow for testing your action.
-- [Dependabot](https://docs.github.com/en/code-security/dependabot) support for dependency updates.
+- Includes a sample metadata file for a GitHub action.
+- Develops logic for the GitHub action in [Node.js](https://nodejs.org/en) using the following stacks:
+  - [Yarn](https://yarnpkg.com/) for project management.
+  - [TypeScript](https://www.typescriptlang.org/) for type checking.
+  - [Jest](https://jestjs.io/) for unit testing.
+  - [ESLint](https://eslint.org/) for static analysis.
+  - [Prettier](https://prettier.io/) for code formatting.
+- Provides a sample workflow file for testing the action.
+- Supports dependency updates with [Dependabot](https://docs.github.com/en/code-security/dependabot).
 
 ## Usage
 
