@@ -67,6 +67,9 @@ jobs:
             dist
           sparse-checkout-cone-mode: false
 
+      # Modify the following steps for testing your JavaScript action.
+      # Learn more: https://docs.github.com/en/actions/automating-builds-and-tests
+
       - name: Create Directory
         uses: ./mkdir-action
         with:
