@@ -26044,11 +26044,13 @@ function mkdirRecursive(path) {
 ;// CONCATENATED MODULE: ./src/index.ts
 
 
-async function main() {
+try {
     const path = core.getInput("path", { required: true });
     mkdirRecursive(path);
 }
-main().catch((err) => core.setFailed(err));
+catch (err) {
+    core.setFailed(err);
+}
 
 })();
 
