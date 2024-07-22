@@ -9,7 +9,7 @@ jobs:
     name: Test Package
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Project
         uses: actions/checkout@v4.1.7
 
       - name: Setup Node.js
@@ -33,7 +33,7 @@ jobs:
       matrix:
         os: [windows, ubuntu, macos]
     steps:
-      - name: Checkout
+      - name: Checkout Action
         uses: actions/checkout@v4.1.7
         with:
           path: mkdir-action
