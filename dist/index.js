@@ -26698,6 +26698,10 @@ var __webpack_exports__ = {};
 
 // EXTERNAL MODULE: ../../../.yarn/berry/cache/@actions-core-npm-1.10.1-3cb1000b4d-10c0.zip/node_modules/@actions/core/lib/core.js
 var core = __nccwpck_require__(2340);
+;// CONCATENATED MODULE: ../../../.yarn/berry/cache/catched-error-message-npm-0.0.1-9126a73d25-10c0.zip/node_modules/catched-error-message/dist/index.esm.js
+function r(r){return function(r){if("object"==typeof(e=r)&&null!==e&&"message"in e&&"string"==typeof e.message)return r;var e;try{return new Error(JSON.stringify(r))}catch(e){return new Error(String(r))}}(r).message}
+//# sourceMappingURL=index.esm.js.map
+
 // EXTERNAL MODULE: external "fs"
 var external_fs_ = __nccwpck_require__(7147);
 var external_fs_default = /*#__PURE__*/__nccwpck_require__.n(external_fs_);
@@ -26715,12 +26719,13 @@ function mkdirRecursive(path) {
 ;// CONCATENATED MODULE: ./src/index.ts
 
 
+
 try {
     const path = core.getInput("path", { required: true });
     mkdirRecursive(path);
 }
 catch (err) {
-    core.setFailed(err);
+    core.setFailed(r(err));
 }
 
 })();
