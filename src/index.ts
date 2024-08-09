@@ -1,10 +1,10 @@
-import * as core from "@actions/core";
-import { getErrorMessage } from "catched-error-message";
+import { error, getInput } from "gha-utils";
 import { mkdirRecursive } from "./mkdir.js";
 
 try {
-  const path = core.getInput("path", { required: true });
+  const path = getInput("path");
   mkdirRecursive(path);
 } catch (err) {
-  core.setFailed(getErrorMessage(err));
+  error(err);
+  process.exit(1);
 }
