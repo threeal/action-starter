@@ -1,6 +1,5 @@
-import 'node:fs';
+import fs from 'node:fs';
 import os from 'node:os';
-import fs from 'fs';
 
 /**
  * Retrieves the value of a GitHub Actions input.
