@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import os from 'node:os';
+import 'node:path';
 
 /**
  * Retrieves the value of a GitHub Actions input.
@@ -12,11 +13,11 @@ function getInput(name) {
     return value.trim();
 }
 /**
- * Logs an error message on GitHub Actions.
+ * Logs an error message in GitHub Actions.
  *
  * @param err - The error, which can be of any type.
  */
-function error(err) {
+function logError(err) {
     const message = err instanceof Error ? err.message : String(err);
     process.stdout.write(`::error::${message}${os.EOL}`);
 }
@@ -35,6 +36,6 @@ try {
     mkdirRecursive(path);
 }
 catch (err) {
-    error(err);
+    logError(err);
     process.exit(1);
 }
