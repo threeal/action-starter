@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import 'node:fs/promises';
 import os from 'node:os';
 import 'node:path';
 
@@ -12,6 +13,7 @@ function getInput(name) {
     const value = process.env[`INPUT_${name.toUpperCase()}`] || "";
     return value.trim();
 }
+
 /**
  * Logs an error message in GitHub Actions.
  *
