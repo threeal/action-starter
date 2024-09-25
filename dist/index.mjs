@@ -10,7 +10,7 @@ import 'node:path';
  * @returns The value of the GitHub Actions input, or an empty string if not found.
  */
 function getInput(name) {
-    const value = process.env[`INPUT_${name.toUpperCase()}`] || "";
+    const value = process.env[`INPUT_${name.toUpperCase()}`] ?? "";
     return value.trim();
 }
 
