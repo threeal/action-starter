@@ -26,7 +26,7 @@ A minimalistic [GitHub repository template](https://docs.github.com/en/repositor
   - Replace the [LICENSE](LICENSE) file.
   - Update the content of the [README](README.md) file.
   - Define the action information in the [action.yml](action.yml) file.
-  - Develop the action logic in the [src/index.ts](src/index.ts) file. Use these commands for development:
+  - Develop the action logic in the [src/main.ts](src/main.ts) file. Use these commands for development:
     - `yarn install`: Initialize project dependencies.
     - `yarn format`: Format the source code.
     - `yarn lint`: Lint the source code.
