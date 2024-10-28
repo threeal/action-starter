@@ -5,8 +5,8 @@ on:
   push:
     branches: [main]
 jobs:
-  build-package:
-    name: Build Package
+  build-action:
+    name: Build Action
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout Project
@@ -28,10 +28,10 @@ jobs:
       - name: Check Lint
         run: yarn lint
 
-      - name: Test Package
+      - name: Test Action
         run: yarn test
 
-      - name: Build Package
+      - name: Build Action
         run: |
           yarn build
           git diff && git diff-index --quiet --exit-code HEAD
