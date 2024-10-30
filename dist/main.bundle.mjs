@@ -1,5 +1,5 @@
-import fs from 'node:fs';
-import 'node:fs/promises';
+import fsPromises from 'node:fs/promises';
+import 'node:fs';
 import os from 'node:os';
 import 'node:path';
 
@@ -24,18 +24,9 @@ function logError(err) {
     process.stdout.write(`::error::${message}${os.EOL}`);
 }
 
-/**
- * Creates a directory recursively.
- *
- * @param path - The path to the directory to create.
- */
-function mkdirRecursive(path) {
-    fs.mkdirSync(path, { recursive: true });
-}
-
 try {
     const path = getInput("path");
-    mkdirRecursive(path);
+    await fsPromises.mkdir(path, { recursive: true });
 }
 catch (err) {
     logError(err);
