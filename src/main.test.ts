@@ -26,6 +26,7 @@ it("should fail to create a directory because a file already exists", async () =
   await import("./main.js");
 
   expect(process.exitCode).toBe(1);
+  process.exitCode = undefined;
 });
 
 afterAll(async () => {

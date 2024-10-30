@@ -1,9 +1,9 @@
+import fsPromises from "node:fs/promises";
 import { getInput, logError } from "gha-utils";
-import { mkdirRecursive } from "./mkdir.js";
 
 try {
   const path = getInput("path");
-  mkdirRecursive(path);
+  await fsPromises.mkdir(path, { recursive: true });
 } catch (err) {
   logError(err);
   process.exitCode = 1;
