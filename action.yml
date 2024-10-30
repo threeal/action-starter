@@ -1,5 +1,4 @@
-# Modify the following action metadata according to the specification of your JavaScript action.
-# Learn more: https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
+# TODO: Modify the following metadata according to the project's specifications.
 
 name: Mkdir Action
 author: Alfi Maulana

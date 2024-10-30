@@ -1,5 +1,4 @@
-<!-- Clear the content of this file and replace it with the description of your project. -->
-<!-- Learn more: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes -->
+<!-- TODO: Replace the content of this file with the new project description. -->
 
 # Action Starter
 
