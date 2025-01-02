@@ -1,4 +1,4 @@
-import { jest } from "@jest/globals";
+import { afterAll, beforeAll, beforeEach, expect, it, vi } from "vitest";
 import fsPromises from "node:fs/promises";
 import os from "node:os";
 
@@ -8,7 +8,7 @@ beforeAll(() => {
 
 beforeEach(async () => {
   await fsPromises.rm("path", { recursive: true, force: true });
-  jest.resetModules();
+  vi.resetModules();
 });
 
 it("should create a directory recursively", async () => {
