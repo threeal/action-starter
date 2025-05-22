@@ -55,24 +55,6 @@ Write the logic for the action in the [`src/main.ts`](./src/main.ts) file accord
 
 If the action will support pre- and post-steps, additional files like `src/pre.ts` and `src/post.ts` can be added. Just make sure to update the Rollup configuration in the [`rollup.config.js`](./rollup.config.js) file and the action metadata in the [`action.yml`](./action.yml) file.
 
-Once the code is written, format it with:
-
-```sh
-pnpm format
-```
-
-Then, check linting with:
-
-```sh
-pnpm lint
-```
-
-Lastly, build and bundle the action files with:
-
-```sh
-pnpm build
-```
-
 ### Testing the Action
 
 Test files in this template are named `*.test.ts` and typically correspond to the source files being tested. This template uses [Vitest](https://vitest.dev/) as the testing framework. For more information on testing with Vitest, refer to [this documentation](https://vitest.dev/guide/).
