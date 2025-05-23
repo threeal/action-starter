@@ -24,7 +24,8 @@ pre-commit:
       exclude:
         - src/*.test.ts
 
-    - run: pnpm rollup -c
+    - name: build action
+      run: pnpm rollup -c
       glob:
         - dist/*
         - src/*.ts
