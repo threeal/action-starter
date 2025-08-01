@@ -1,6 +1,6 @@
-import { afterAll, beforeAll, beforeEach, expect, it, vi } from "vitest";
 import fsPromises from "node:fs/promises";
 import os from "node:os";
+import { afterAll, beforeAll, beforeEach, expect, it, vi } from "vitest";
 
 beforeAll(() => {
   process.chdir(os.tmpdir());
