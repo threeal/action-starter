@@ -1,5 +1,5 @@
-import fsPromises from 'node:fs/promises';
 import 'node:fs';
+import fsPromises from 'node:fs/promises';
 import os from 'node:os';
 import 'node:path';
 

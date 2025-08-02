@@ -1,5 +1,5 @@
-import fsPromises from "node:fs/promises";
 import { getInput, logError } from "gha-utils";
+import fsPromises from "node:fs/promises";
 
 try {
   const path = getInput("path");
