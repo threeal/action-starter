@@ -11,5 +11,5 @@ inputs:
     description: Path of the directory to create
     required: true
 runs:
-  using: node20
+  using: node24
   main: dist/main.bundle.mjs
