@@ -14,7 +14,7 @@ jobs:
         os: [ubuntu-24.04, macos-14, windows-2022]
     steps:
       - name: Checkout Action
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v5.0.1
         with:
           path: mkdir-action
           sparse-checkout: |
