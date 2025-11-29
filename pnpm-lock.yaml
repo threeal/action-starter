@@ -22,8 +22,8 @@ importers:
         specifier: ^12.3.0
         version: 12.3.0(rollup@4.52.5)(tslib@2.8.1)(typescript@5.9.3)
       '@tsconfig/node24':
-        specifier: ^24.0.1
-        version: 24.0.1
+        specifier: ^24.0.3
+        version: 24.0.3
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
@@ -472,8 +472,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tsconfig/node24@24.0.1':
-    resolution: {integrity: sha512-3+IXshza3bIrT0tbHBr9CixQDVf4iBf0HTR0hCYowhpLqkzJjswu3UY8aZWjRXZep31kYB+o2SQeD8KwIoUHYw==}
+  '@tsconfig/node24@24.0.3':
+    resolution: {integrity: sha512-vcERKtKQKHgzt/vfS3Gjasd8SUI2a0WZXpgJURdJsMySpS5+ctgbPfuLj2z/W+w4lAfTWxoN4upKfu2WzIRYnw==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -1674,7 +1674,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.52.5':
     optional: true
 
-  '@tsconfig/node24@24.0.1': {}
+  '@tsconfig/node24@24.0.3': {}
 
   '@types/estree@1.0.8': {}
 
