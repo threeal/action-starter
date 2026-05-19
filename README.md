@@ -65,7 +65,7 @@ After creating your test files, run tests with:
 pnpm test
 ```
 
-Additionally, you can test the action by running it directly from the GitHub workflow as specified in the [`.github/workflows/test.yaml`](./.github/workflows/test.yaml) file.
+Additionally, you can test the action by running it directly from the GitHub workflow as specified in the [`.github/workflows/ci.yaml`](./.github/workflows/ci.yaml) file.
 
 ### Release the Action
 
