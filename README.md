@@ -49,6 +49,12 @@ pnpm install
 
 For more information on pnpm, including adding dependencies or running tools, refer to [this documentation](https://pnpm.io/pnpm-cli).
 
+This template also uses [Lefthook](https://lefthook.dev/) to manage Git hooks. Lefthook is not installed as a project dependency and must be installed independently by following [this guide](https://lefthook.dev/installation/). Once installed, set up the Git hooks with:
+
+```sh
+lefthook install
+```
+
 ### Developing the Action
 
 Write the logic for the action in the [`src/main.ts`](./src/main.ts) file according to the project requirements. If you're new to [TypeScript](https://www.typescriptlang.org/), refer to [this documentation](https://www.typescriptlang.org/docs/) for guidance.
