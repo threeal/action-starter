@@ -1,0 +1,27 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+> **Template notice:** This file describes the template repository itself. If you've created a project from this template, replace this content with guidance specific to your project.
+
+## Commands
+
+```sh
+pnpm test                    # run all tests (Vitest)
+pnpm exec vitest <file>      # run a single test file
+pnpm exec tsc --noEmit       # type check
+pnpm exec eslint .           # lint
+pnpm exec prettier --check . # check formatting
+pnpm exec prettier --write . # fix formatting
+pnpm exec rollup -c          # build — outputs dist/main.bundle.mjs
+```
+
+Pre-commit hooks (via Lefthook) automatically run formatting, linting, type checking, and building before each commit.
+
+## Architecture
+
+This is a Node.js 24 GitHub Action. The action's entry point is `dist/main.bundle.mjs`, produced by Rollup bundling `src/main.ts` into a single ESM file. The `dist/` folder must be committed — CI verifies there is no git diff after building.
+
+Source lives entirely in `src/`. The main logic uses `gha-utils` for reading action inputs (`getInput`) and writing outputs/logs. Tests use Vitest and must maintain 100% coverage (enforced in `vitest.config.ts`).
+
+The action is defined in `action.yml`, which declares inputs, outputs, and the Node.js runtime pointing to `dist/main.bundle.mjs`.
