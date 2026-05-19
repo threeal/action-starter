@@ -12,7 +12,7 @@ This template provides a basic GitHub Action project containing a sample [JavaSc
 - Uses [pnpm](https://pnpm.io/) as the package manager.
 - Supports formatting with [Prettier](https://prettier.io/), linting with [ESLint](https://eslint.org/), and testing with [Vitest](https://vitest.dev/).
 - Fixes formatting and linting during pre-commit hooks using [Lefthook](https://lefthook.dev/).
-- Preconfigured workflows for [Dependabot](https://docs.github.com/en/code-security/dependabot) and [GitHub Actions](https://github.com/features/actions).
+- Preconfigured workflows for [Dependabot](https://docs.github.com/en/code-security/dependabot) and [GitHub Actions](https://github.com/features/actions) that validate the pre-commit hook.
 
 ## Usage
 
