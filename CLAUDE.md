@@ -16,7 +16,7 @@ pnpm exec prettier --write . # fix formatting
 pnpm exec rollup -c          # build — outputs dist/main.bundle.mjs
 ```
 
-Pre-commit hooks are managed by [Lefthook](https://lefthook.dev/), an external tool (not a dev dependency) that must be installed independently and set up with `lefthook install`. Hooks automatically run formatting, linting, type checking, and building before each commit.
+Pre-commit hooks are managed by [Lefthook](https://lefthook.dev/), an external tool (not a dev dependency) that must be installed independently and set up with `lefthook install`. Hooks automatically run formatting, linting, type checking, and building before each commit. CI also validates the pre-commit hook by running `lefthook run pre-commit --all-files`.
 
 ## Architecture
 
