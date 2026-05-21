@@ -7,13 +7,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```sh
-pnpm test                    # run all tests (Vitest)
-pnpm exec vitest <file>      # run a single test file
-pnpm exec tsc --noEmit       # type check
-pnpm exec eslint .           # lint
-pnpm exec prettier --check . # check formatting
-pnpm exec prettier --write . # fix formatting
-pnpm exec rollup -c          # build — outputs dist/main.bundle.mjs
+pnpm test                 # run all tests (Vitest)
+pnpm test <file>          # run a single test file
+pnpm tsc                  # type check
+pnpm eslint .             # lint
+pnpm prettier --check .   # check formatting
+pnpm prettier --write .   # fix formatting
+pnpm rollup -c            # build — outputs dist/main.bundle.mjs
 ```
 
 Pre-commit hooks are managed by [Lefthook](https://lefthook.dev/), set up with `lefthook install`. Hooks automatically run formatting, linting, type checking, and building before each commit. CI also validates the pre-commit hook by running `lefthook run pre-commit --all-files`.
