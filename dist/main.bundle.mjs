@@ -1,5 +1,5 @@
 import 'node:fs';
-import fsPromises from 'node:fs/promises';
+import { mkdir } from 'node:fs/promises';
 import os from 'node:os';
 import 'node:path';
 
@@ -26,7 +26,7 @@ function logError(err) {
 
 try {
     const path = getInput("path");
-    await fsPromises.mkdir(path, { recursive: true });
+    await mkdir(path, { recursive: true });
 }
 catch (err) {
     logError(err);
