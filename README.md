@@ -45,10 +45,6 @@ try {
 }
 ```
 
-### `package.json`
-
-Update the `name` and any relevant fields to match your project.
-
 ### `LICENSE`
 
 The template ships with the [Unlicense](https://unlicense.org/) (public domain). Replace it with the license you want, or leave it as-is.
