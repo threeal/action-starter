@@ -1,6 +1,6 @@
 import { access, mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { afterAll, beforeEach, expect, it, vi } from "vitest";
+import { afterAll, beforeEach, expect, test, vi } from "vitest";
 
 vi.mock("gha-utils");
 
@@ -15,7 +15,7 @@ beforeEach(async () => {
 
 afterAll(() => rm(tmpDir, { recursive: true, force: true }));
 
-it("should create a directory recursively", async () => {
+test("create a directory recursively", async () => {
   const { getInput } = await import("gha-utils");
   vi.mocked(getInput).mockReturnValue(path.join(tmpDir, "new/directory"));
 
@@ -25,7 +25,7 @@ it("should create a directory recursively", async () => {
   expect(process.exitCode).toBeUndefined();
 });
 
-it("should fail to create a directory because a file already exists", async () => {
+test("fail to create a directory when a file already exists at the path", async () => {
   await writeFile(path.join(tmpDir, "file"), "");
 
   const { getInput } = await import("gha-utils");
