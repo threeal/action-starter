@@ -1,4 +1,5 @@
-import { getInput, logError } from "gha-utils";
+import { getInput } from "ghakit/io";
+import { logError } from "ghakit/log";
 import { mkdir } from "node:fs/promises";
 
 try {
