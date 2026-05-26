@@ -6,7 +6,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "gha-utils": "^0.4.1"
+    "ghakit": "^1.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
