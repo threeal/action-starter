@@ -22,6 +22,6 @@ Pre-commit hooks are managed by [Lefthook](https://lefthook.dev/), set up with `
 
 This is a Node.js 24 GitHub Action. The action's entry point is `dist/main.bundle.mjs`, produced by Rollup bundling `src/main.ts` into a single ESM file. The `dist/` folder must be committed — CI verifies there is no git diff after building.
 
-Source lives entirely in `src/`. The main logic uses `gha-utils` for reading action inputs (`getInput`) and writing outputs/logs. Tests use Vitest and must maintain 100% coverage (enforced in `vitest.config.ts`).
+Source lives entirely in `src/`. Action logic lives in `src/action.ts` as an exported async function; `src/main.ts` is the entry point that calls it and handles error logging and exit codes. Use `ghakit` for anything GitHub Actions-related (reading inputs, writing outputs, logging, spawning processes, etc.). Tests use Vitest and must maintain 100% coverage (enforced in `vitest.config.ts`).
 
 The action is defined in `action.yml`, which declares inputs, outputs, and the Node.js runtime pointing to `dist/main.bundle.mjs`.

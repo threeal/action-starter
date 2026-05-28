@@ -28,20 +28,19 @@ lefthook install
 
 Update the action's name, description, branding, and inputs/outputs to match what your action does.
 
-### `src/main.ts`
+### `src/action.ts` and `src/main.ts`
 
-This is the action's entry point. Replace the example logic with your own. Use [`gha-utils`](https://github.com/threeal/gha-utils) to read inputs, write outputs, and log errors:
+`src/action.ts` holds your action logic as an exported async function. `src/main.ts` is the entry point — it calls that function and handles errors.
+
+Use [`ghakit`](https://github.com/threeal/ghakit) for anything GitHub Actions-related — reading inputs, writing outputs, logging, spawning processes, and more.
 
 ```ts
-import { getInput, logError, setOutput } from "gha-utils";
+// src/action.ts
+import { getInput } from "ghakit/io";
 
-try {
+export async function myAction() {
   const input = getInput("my-input");
   // ... your action logic ...
-  setOutput("my-output", result);
-} catch (err) {
-  logError(err);
-  process.exitCode = 1;
 }
 ```
 
