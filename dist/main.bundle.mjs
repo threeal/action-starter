@@ -1,7 +1,19 @@
+import { EOL } from 'node:os';
 import 'node:fs';
 import { mkdir } from 'node:fs/promises';
-import { EOL } from 'node:os';
 import 'node:path';
+
+/**
+ * Logs an error message in GitHub Actions.
+ *
+ * @param err - The error, which can be of any type.
+ * @param options - Optional annotation parameters to pin the message to a file location.
+ */
+function logError(err, options) {
+    const message = err instanceof Error ? err.message : String(err);
+    const params = "";
+    process.stdout.write(`::error${params}::${message}${EOL}`);
+}
 
 /**
  * Retrieves the value of a GitHub Actions input.
@@ -16,23 +28,12 @@ function getInput(name) {
     return process.env[`INPUT_${name.toUpperCase()}`] ?? "";
 }
 
-/**
- * Logs an error message in GitHub Actions.
- *
- * @param err - The error, which can be of any type.
- * @param options - Optional annotation parameters to pin the message to a file location.
- */
-function logError(err, options) {
-    const message = err instanceof Error ? err.message : String(err);
-    const params = "";
-    process.stdout.write(`::error${params}::${message}${EOL}`);
-}
-
-try {
+async function mkdirAction() {
     const path = getInput("path");
     await mkdir(path, { recursive: true });
 }
-catch (err) {
+
+await mkdirAction().catch((err) => {
     logError(err);
     process.exitCode = 1;
-}
+});

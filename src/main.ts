@@ -1,11 +1,7 @@
-import { getInput } from "ghakit/io";
 import { logError } from "ghakit/log";
-import { mkdir } from "node:fs/promises";
+import { mkdirAction } from "./action.js";
 
-try {
-  const path = getInput("path");
-  await mkdir(path, { recursive: true });
-} catch (err) {
+await mkdirAction().catch((err: unknown) => {
   logError(err);
   process.exitCode = 1;
-}
+});
