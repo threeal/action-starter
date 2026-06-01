@@ -65,7 +65,7 @@ If the hook reports errors, fix them and commit again. The `dist/` folder must b
 Add test files alongside source files as `*.test.ts`. Run all tests with:
 
 ```sh
-pnpm test
+pnpm vitest run
 ```
 
 100% code coverage is enforced. Tests use [Vitest](https://vitest.dev/).

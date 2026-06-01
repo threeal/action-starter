@@ -7,8 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```sh
-pnpm test                 # run all tests (Vitest)
-pnpm test <file>          # run a single test file
+pnpm vitest run           # run all tests (Vitest)
+pnpm vitest run <file>    # run a single test file
 pnpm tsc                  # type check
 pnpm eslint .             # lint
 pnpm prettier --check .   # check formatting
