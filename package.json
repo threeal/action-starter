@@ -2,9 +2,6 @@
   "name": "root",
   "private": true,
   "type": "module",
-  "dependencies": {
-    "ghakit": "^1.0.0"
-  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@rollup/plugin-node-resolve": "^16.0.3",
@@ -13,6 +10,7 @@
     "@types/node": "^25.9.1",
     "@vitest/coverage-v8": "^4.1.7",
     "eslint": "^10.4.0",
+    "ghakit": "^1.0.0",
     "jiti": "^2.7.0",
     "prettier": "^3.8.3",
     "prettier-plugin-organize-imports": "^4.3.0",

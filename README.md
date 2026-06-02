@@ -56,7 +56,7 @@ Write your code in `src/`. When you're ready, just commit — the pre-commit hoo
 2. Format code (Prettier)
 3. Fix lint issues (ESLint)
 4. Type-check (TypeScript)
-5. Build the bundle (`dist/main.bundle.mjs`)
+5. Build the bundle (`dist/main.js`)
 
 If the hook reports errors, fix them and commit again. The `dist/` folder must be committed — it's what GitHub Actions runs.
 
