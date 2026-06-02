@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      ghakit:
-        specifier: ^1.0.0
-        version: 1.0.0
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -33,6 +29,9 @@ importers:
       eslint:
         specifier: ^10.4.0
         version: 10.4.0(jiti@2.7.0)
+      ghakit:
+        specifier: ^1.0.0
+        version: 1.0.0
       jiti:
         specifier: ^2.7.0
         version: 2.7.0

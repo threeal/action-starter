@@ -13,15 +13,15 @@ pnpm tsc                  # type check
 pnpm eslint .             # lint
 pnpm prettier --check .   # check formatting
 pnpm prettier --write .   # fix formatting
-pnpm rollup -c            # build — outputs dist/main.bundle.mjs
+pnpm rollup -c            # build — outputs dist/main.js
 ```
 
 Pre-commit hooks are managed by [Lefthook](https://lefthook.dev/), set up with `lefthook install`. Hooks automatically run formatting, linting, type checking, and building before each commit. CI also validates the pre-commit hook by running `lefthook run pre-commit --all-files`.
 
 ## Architecture
 
-This is a Node.js 24 GitHub Action. The action's entry point is `dist/main.bundle.mjs`, produced by Rollup bundling `src/main.ts` into a single ESM file. The `dist/` folder must be committed — CI verifies there is no git diff after building.
+This is a Node.js 24 GitHub Action. The action's entry point is `dist/main.js`, produced by Rollup bundling `src/main.ts` into a single ESM file. The `dist/` folder must be committed — CI verifies there is no git diff after building.
 
 Source lives entirely in `src/`. Action logic lives in `src/action.ts` as an exported async function; `src/main.ts` is the entry point that calls it and handles error logging and exit codes. Use `ghakit` for anything GitHub Actions-related (reading inputs, writing outputs, logging, spawning processes, etc.). Tests use Vitest and must maintain 100% coverage (enforced in `vitest.config.ts`).
 
-The action is defined in `action.yml`, which declares inputs, outputs, and the Node.js runtime pointing to `dist/main.bundle.mjs`.
+The action is defined in `action.yml`, which declares inputs, outputs, and the Node.js runtime pointing to `dist/main.js`.
