@@ -1,39 +1,24 @@
-import { EOL } from 'node:os';
-import 'node:fs';
-import { mkdir } from 'node:fs/promises';
-import 'node:path';
+import { EOL } from 'os';
+import 'fs';
+import { mkdir } from 'fs/promises';
+import 'path';
 
-/**
- * Logs an error message in GitHub Actions.
- *
- * @param err - The error, which can be of any type.
- * @param options - Optional annotation parameters to pin the message to a file location.
- */
+// node_modules/.pnpm/ghakit@1.0.0/node_modules/ghakit/dist/log.js
 function logError(err, options) {
-    const message = err instanceof Error ? err.message : String(err);
-    const params = "";
-    process.stdout.write(`::error${params}::${message}${EOL}`);
+  const message = err instanceof Error ? err.message : String(err);
+  const params = "";
+  process.stdout.write(`::error${params}::${message}${EOL}`);
 }
-
-/**
- * Retrieves the value of a GitHub Actions input.
- *
- * Input names are matched case-insensitively — `getInput("token")` and
- * `getInput("TOKEN")` both read the same `INPUT_TOKEN` env var.
- *
- * @param name - The name of the GitHub Actions input.
- * @returns The value of the GitHub Actions input, or an empty string if not set.
- */
 function getInput(name) {
-    return process.env[`INPUT_${name.toUpperCase()}`] ?? "";
+  return process.env[`INPUT_${name.toUpperCase()}`] ?? "";
 }
-
 async function mkdirAction() {
-    const path = getInput("path");
-    await mkdir(path, { recursive: true });
+  const path = getInput("path");
+  await mkdir(path, { recursive: true });
 }
 
+// src/main.ts
 await mkdirAction().catch((err) => {
-    logError(err);
-    process.exitCode = 1;
+  logError(err);
+  process.exitCode = 1;
 });
