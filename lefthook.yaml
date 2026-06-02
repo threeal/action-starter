@@ -16,4 +16,4 @@ pre-commit:
       run: pnpm tsc
 
     - name: build action
-      run: pnpm rollup -c
+      run: pnpm tsup

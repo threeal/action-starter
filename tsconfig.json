@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/node24",
+  "extends": "@tsconfig/node24/tsconfig.json",
   "compilerOptions": {
     "module": "node16",
     "noEmit": true
