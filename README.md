@@ -1,12 +1,10 @@
 # Action Starter
 
-A minimal template for building a [JavaScript GitHub Action](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-javascript-action).
+A minimal template for building a [JavaScript GitHub Action](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-javascript-action) in [TypeScript](https://www.typescriptlang.org/) with [Node.js](https://nodejs.org/en). Ships pre-configured with formatting, linting, 100% test coverage enforcement, pre-commit hooks, and CI.
 
 ## Getting Started
 
-Create a new repository from this template on GitHub using [this link](https://github.com/new?template_name=action-starter&template_owner=threeal).
-
-Or clone it locally and point it at your own remote.
+Create a new repository from this template on GitHub using [this link](https://github.com/new?template_name=action-starter&template_owner=threeal), or clone it locally and point it at your own remote.
 
 ## Setup
 
@@ -16,59 +14,43 @@ Install [pnpm](https://pnpm.io/), then install dependencies:
 pnpm install
 ```
 
-Install [Lefthook](https://lefthook.dev/), then register the pre-commit hooks:
+Install [Lefthook](https://lefthook.dev/), then register the pre-commit hook:
 
 ```sh
 lefthook install
 ```
 
-## Customizing the Action
+## Customizing
 
-### `action.yml`
+**`action.yml`** — Update the action's name, description, branding, and inputs/outputs to match what your action does.
 
-Update the action's name, description, branding, and inputs/outputs to match what your action does.
+**`src/action.ts`** — Replace with your actual action logic as an exported async function. Use [`ghakit`](https://www.npmjs.com/package/ghakit) for anything GitHub Actions-related — reading inputs, writing outputs, logging, spawning processes, and more.
 
-### `src/action.ts` and `src/main.ts`
+**`src/main.ts`** — Entry point that calls the action function and handles errors. Usually doesn't need to change.
 
-`src/action.ts` holds your action logic as an exported async function. `src/main.ts` is the entry point — it calls that function and handles errors.
+**`README.md`** and **`CLAUDE.md`** — Replace with documentation suited to your project.
 
-Use [`ghakit`](https://github.com/threeal/ghakit) for anything GitHub Actions-related — reading inputs, writing outputs, logging, spawning processes, and more.
+**`LICENSE`** — Replace with your preferred license, or keep it as-is (the template uses the [Unlicense](https://unlicense.org/) — public domain).
 
-```ts
-// src/action.ts
-import { getInput } from "ghakit/io";
+## Development
 
-export async function myAction() {
-  const input = getInput("my-input");
-  // ... your action logic ...
-}
+Write code in `src/`. Test files live alongside source as `*.test.ts`. Before committing, run the pre-commit hook to install dependencies, fix formatting and lint, type-check, and build the action:
+
+```sh
+lefthook run pre-commit
 ```
 
-### `LICENSE`
-
-The template ships with the [Unlicense](https://unlicense.org/) (public domain). Replace it with the license you want, or leave it as-is.
-
-## Development Workflow
-
-Write your code in `src/`. When you're ready, just commit — the pre-commit hook will automatically:
-
-1. Install dependencies
-2. Format code (Prettier)
-3. Fix lint issues (ESLint)
-4. Type-check (TypeScript)
-5. Build the bundle (`dist/main.js`)
-
-If the hook reports errors, fix them and commit again. The `dist/` folder must be committed — it's what GitHub Actions runs.
+If any files change during the run, re-stage them and retry. The hook also runs automatically on each `git commit` — if it fails, fix the reported issues, re-stage, and commit again.
 
 ## Testing
 
-Add test files alongside source files as `*.test.ts`. Run all tests with:
+Run the full test suite with:
 
 ```sh
 pnpm vitest run
 ```
 
-100% code coverage is enforced. Tests use [Vitest](https://vitest.dev/).
+The project enforces 100% code coverage on every run.
 
 ## CI
 
@@ -81,11 +63,4 @@ Update the `test` job to exercise your action's actual inputs and verify its out
 
 ## Releasing
 
-Tag a release on GitHub:
-
-```sh
-git tag v1.0.0
-git push origin v1.0.0
-```
-
-Then create a GitHub Release from that tag. To make the action discoverable, [publish it to the GitHub Marketplace](https://docs.github.com/en/actions/sharing-automations/creating-actions/publishing-actions-in-github-marketplace) from the release page.
+Push a version tag and create a GitHub Release. To publish the action to GitHub Marketplace, check the option when creating the release — see [Publishing actions in GitHub Marketplace](https://docs.github.com/en/actions/how-tos/create-and-publish-actions/publish-in-github-marketplace) for guidance.
