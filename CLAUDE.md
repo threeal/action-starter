@@ -34,7 +34,7 @@ This is a minimal Node.js GitHub Action starter template written in TypeScript t
 
 ## Tooling
 
-- **pnpm** is the package manager. It uses `use-node-version` in `.npmrc` to select the Node.js version; `packageManager` in `package.json` pins the pnpm version; `engines.node` asserts Node >=24.
+- **pnpm** is the package manager. `devEngines.runtime` in `package.json` specifies the Node.js version (`onFail: "download"` triggers automatic download if needed); `packageManager` pins the pnpm version; `engines.node` asserts Node >=24.
 - **tsup** is the bundler. All packages — including runtime dependencies like `ghakit` — belong in `devDependencies`; tsup bundles everything so there are no runtime `dependencies` needed.
 - **ghakit** handles all GitHub Actions-specific concerns: reading inputs, writing outputs, logging, and spawning processes.
 - **ESLint** uses flat config (`eslint.config.ts`) with `@eslint/js` recommended rules and `typescript-eslint` strict + stylistic type-checked rules.
