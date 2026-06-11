@@ -22,29 +22,18 @@ lefthook install
 
 ## Customizing
 
-**`action.yml`** — Update the action's name, description, branding, and inputs/outputs to match what your action does.
+Replace or extend the template files to fit your project:
 
-**`src/action.ts`** — Replace with your actual action logic as an exported async function. Use [`ghakit`](https://www.npmjs.com/package/ghakit) for anything GitHub Actions-related — reading inputs, writing outputs, logging, spawning processes, and more.
-
-**`src/main.ts`** — Entry point that calls the action function and handles errors. Usually doesn't need to change.
-
-**`README.md`** and **`CLAUDE.md`** — Replace with documentation suited to your project.
-
-**`LICENSE`** — Replace with your preferred license, or keep it as-is (the template uses the [Unlicense](https://unlicense.org/) — public domain).
+- **`src/action.ts`** — Replace with your actual action logic as an exported async function. Use [`ghakit`](https://www.npmjs.com/package/ghakit) for GitHub Actions utilities — inputs, outputs, logging, and more.
+- **`src/main.ts`** — Entry point that calls the action function and handles errors. Usually doesn't need to change.
+- **`action.yml`** — Update the action's name, description, branding, and inputs/outputs to match what your action does.
+- **`CLAUDE.md`** — Replace with guidance specific to your project.
+- **`LICENSE`** — Replace with your preferred license, or keep the [Unlicense](https://unlicense.org/).
+- **`README.md`** — Replace with a description of your project.
 
 ## Development
 
-Write code in `src/`. Test files live alongside source as `*.test.ts`. Before committing, run the pre-commit hook to install dependencies, fix formatting and lint, type-check, and build the action:
-
-```sh
-lefthook run pre-commit
-```
-
-If any files change during the run, re-stage them and retry. The hook also runs automatically on each `git commit` — if it fails, fix the reported issues, re-stage, and commit again.
-
-## Testing
-
-Run the full test suite with:
+Write code in `src/`. Test files live alongside source as `*.test.ts`. Run the test suite with:
 
 ```sh
 pnpm vitest run
@@ -52,14 +41,15 @@ pnpm vitest run
 
 The project enforces 100% code coverage on every run.
 
-## CI
+Before committing, run the pre-commit hook to install dependencies, type-check, fix formatting and lint, and build the action:
 
-`.github/workflows/ci.yaml` runs two jobs on every push and pull request:
+```sh
+lefthook run pre-commit
+```
 
-- **check** — validates the pre-commit hook and runs tests
-- **test** — runs the real action on Ubuntu, macOS, and Windows
+If any file changes during the run, re-stage the changed files and retry. The hook also runs automatically on each `git commit` — if it fails, fix the reported issues, re-stage, and commit again.
 
-Update the `test` job to exercise your action's actual inputs and verify its outputs.
+After committing, push to `main` or open a pull request from another branch — CI will run the pre-commit hook across all files and the full test suite, then run the action itself on Ubuntu, macOS, and Windows.
 
 ## Releasing
 
