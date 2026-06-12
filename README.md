@@ -24,6 +24,7 @@ lefthook install
 
 Replace or extend the template files to fit your project:
 
+- **`.github/workflows/ci.yaml`** — Update or replace the `test` job with jobs that test your action as needed.
 - **`src/action.ts`** — Replace with your actual action logic as an exported async function. Use [`ghakit`](https://www.npmjs.com/package/ghakit) for GitHub Actions utilities — inputs, outputs, logging, and more.
 - **`src/main.ts`** — Entry point that calls the action function and handles errors. Usually doesn't need to change.
 - **`action.yml`** — Update the action's name, description, branding, and inputs/outputs to match what your action does.
@@ -49,7 +50,7 @@ lefthook run pre-commit
 
 If any file changes during the run, re-stage the changed files and retry. The hook also runs automatically on each `git commit` — if it fails, fix the reported issues, re-stage, and commit again.
 
-After committing, push to `main` or open a pull request from another branch — CI will run the pre-commit hook across all files and the full test suite, then run the action itself on Ubuntu, macOS, and Windows.
+After committing, push to `main` or open a pull request from another branch — CI will run the pre-commit hook across all files and the unit test suite, and test the action in the CI environment.
 
 ## Releasing
 

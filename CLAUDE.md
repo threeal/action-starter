@@ -38,7 +38,7 @@ Linter configured in `eslint.config.ts`.
 
 Automates CI. Workflow files:
 
-- **`.github/workflows/ci.yaml`** — Triggers on push to `main`, pull requests, and manual dispatch.
+- **`.github/workflows/ci.yaml`** — Triggers on push to `main`, pull requests, and manual dispatch. The `test` job tests the action in the CI environment — it's a placeholder to be updated or replaced to suit the actual action.
 
 ### Lefthook
 
