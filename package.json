@@ -6,7 +6,7 @@
     "@eslint/js": "^10.0.1",
     "@tsconfig/node24": "^24.0.4",
     "@types/node": "^26.0.1",
-    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/coverage-v8": "^4.1.10",
     "eslint": "^10.5.0",
     "ghakit": "^1.0.0",
     "jiti": "^2.7.0",
