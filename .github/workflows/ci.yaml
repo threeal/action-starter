@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v6.0.3
+        uses: actions/checkout@v7.0.1
 
       - name: Setup Lefthook
         uses: threeal/setup-lefthook-action@v1.0.0
@@ -33,7 +33,7 @@ jobs:
         os: [ubuntu-24.04, macos-15, windows-2025]
     steps:
       - name: Checkout
-        uses: actions/checkout@v6.0.3
+        uses: actions/checkout@v7.0.1
         with:
           path: mkdir-action
           sparse-checkout: |
