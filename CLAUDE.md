@@ -18,11 +18,11 @@ This is a minimal Node.js GitHub Action starter template written in TypeScript t
 
 ### Build Outputs
 
-- **`dist/main.js`** — Single bundled ESM file. Must be committed — CI verifies there is no git diff after building.
+- **`dist/main.mjs`** — Single bundled ESM file. Must be committed — CI verifies there is no git diff after building.
 
 ### Action Definition
 
-- **`action.yml`** — Declares the action's inputs, outputs, branding, and the Node.js runtime pointing to `dist/main.js`.
+- **`action.yml`** — Declares the action's inputs, outputs, branding, and the Node.js runtime pointing to `dist/main.mjs`.
 
 ## Tooling
 
@@ -52,9 +52,9 @@ Package manager. Also manages the Node.js runtime — versions for Node.js and p
 
 Formatter configured in `.prettierrc.json` using `prettier-plugin-organize-imports` — import order is auto-managed.
 
-### tsup
+### tsdown
 
-Bundler configured in `tsup.config.ts`. All packages — including runtime dependencies — belong in `devDependencies`; tsup bundles everything so there are no runtime `dependencies` needed.
+Bundler configured in `tsdown.config.ts`. All packages — including runtime dependencies — belong in `devDependencies`; tsdown bundles everything so there are no runtime `dependencies` needed.
 
 ### TypeScript
 
