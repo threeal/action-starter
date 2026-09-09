@@ -6,82 +6,36 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## About This Repository
 
-This is a minimal Node.js GitHub Action starter template written in TypeScript targeting Node 24 (ESM). The mkdir action in `src/` is a placeholder — replace it with your actual action logic when starting a new project.
+Minimal GitHub Action starter, TypeScript targeting Node 24, ESM. `src/` contains a placeholder mkdir action — replace it with real action logic when starting a new project.
 
-## Architecture
+## Rules that aren't obvious from the code
 
-### Source Files
+- `tsup` bundles everything at build time, so every package — including runtime dependencies — belongs in `devDependencies`; there's no `dependencies` field to keep in sync.
+- Import paths must end in `.js`, even when importing `.ts` source files. `tsconfig.json` sets `moduleResolution: node16`, which requires this.
+- `dist/main.js` (built by `tsup` from `src/main.ts`) must be committed — `action.yml` points to it directly as the runtime entry, and CI fails if building produces a diff.
+- Prettier auto-reorders imports (`prettier-plugin-organize-imports`) — reordering on format is expected, not a bug.
+- `lefthook run pre-commit` auto-fixes formatting/lint and rebuilds `dist/main.js`; `fail_on_changes` fails the run if any file changed. If that happens, re-stage the changed files and rerun.
+- Vitest's 100% coverage threshold applies to the whole run, not per file. Running a single test file can fail coverage if it imports source another file is responsible for covering — use the full suite for an accurate result.
 
-- **`src/action.ts`** — The action implementation as an exported async function.
-- **`src/main.ts`** — Entry point that calls the action function and handles error logging and exit codes.
-- **`src/*.test.ts`** — Vitest test files co-located with source.
+## Layout
 
-### Build Outputs
+- `src/action.ts` — the action implementation, an exported async function.
+- `src/main.ts` — entry point; calls the action function and handles error logging and exit codes.
+- `src/*.test.ts` — colocated with the source they test.
 
-- **`dist/main.js`** — Single bundled ESM file. Must be committed — CI verifies there is no git diff after building.
+## Config map
 
-### Action Definition
+- Type checking — `tsconfig.json`
+- Lint — `eslint.config.ts`
+- Format — `.prettierrc.json`
+- Bundler — `tsup.config.ts`
+- Tests + coverage — `vitest.config.ts`
+- Git hooks — `lefthook.yaml`
+- CI — `.github/workflows/ci.yaml`
+- Dependency updates — `.github/dependabot.yaml`
+- Action inputs/outputs/branding — `action.yml`
 
-- **`action.yml`** — Declares the action's inputs, outputs, branding, and the Node.js runtime pointing to `dist/main.js`.
+## Commands
 
-## Tooling
-
-### Dependabot
-
-Keeps GitHub Actions and npm dependencies up to date automatically via `.github/dependabot.yaml`.
-
-### ESLint
-
-Linter configured in `eslint.config.ts`.
-
-### GitHub Actions
-
-Automates CI. Workflow files:
-
-- **`.github/workflows/ci.yaml`** — Triggers on push to `main`, pull requests, and manual dispatch.
-
-### Lefthook
-
-Git hook manager configured in `lefthook.yaml`.
-
-### pnpm
-
-Package manager. Also manages the Node.js runtime — versions for Node.js and pnpm are pinned in `package.json`.
-
-### Prettier
-
-Formatter configured in `.prettierrc.json` using `prettier-plugin-organize-imports` — import order is auto-managed.
-
-### tsup
-
-Bundler configured in `tsup.config.ts`. All packages — including runtime dependencies — belong in `devDependencies`; tsup bundles everything so there are no runtime `dependencies` needed.
-
-### TypeScript
-
-Type checker. `tsconfig.json` is used for type checking via `pnpm tsc`.
-
-The config sets `moduleResolution: node16`, which requires all import paths to use `.js` extensions — even when importing `.ts` source files.
-
-### Vitest
-
-Test runner configured in `vitest.config.ts` with 100% coverage threshold required on every test run.
-
-## Checking and Fixing
-
-Run the pre-commit hook:
-
-```sh
-lefthook run pre-commit              # staged files only (default)
-lefthook run pre-commit --all-files  # all files — matches what CI runs
-```
-
-If any file changes during the run, re-stage the changed files and retry.
-
-## Testing
-
-```sh
-pnpm vitest run             # Run all tests
-pnpm vitest run <file>      # Run a single test file
-```
-
-Coverage is always enabled and computed for all files imported during the test run. Running a single test file may fail the 100% threshold if it imports a source file that another test is responsible for fully covering — use the full suite for accurate results.
+- `lefthook run pre-commit` — lint/format/build on staged files (`--all-files` to match CI)
+- `pnpm vitest run` — full test suite with coverage
