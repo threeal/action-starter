@@ -16,4 +16,4 @@ pre-commit:
       run: pnpm eslint --fix
 
     - name: build action
-      run: pnpm tsup
+      run: pnpm tsdown
