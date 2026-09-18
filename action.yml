@@ -1,13 +1,16 @@
-name: Mkdir Action
+name: Download File Action
 author: Alfi Maulana
-description: Create a new directory
+description: Download a file from a URL
 branding:
-  icon: folder-plus
+  icon: download
   color: white
 inputs:
-  path:
-    description: Path of the directory to create
+  url:
+    description: URL of the file to download
     required: true
+outputs:
+  path:
+    description: Path of the downloaded file
 runs:
   using: node24
   main: dist/main.mjs

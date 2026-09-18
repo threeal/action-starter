@@ -35,17 +35,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7.0.1
         with:
-          path: mkdir-action
+          path: download-file-action
           sparse-checkout: |
             action.yml
             dist
           sparse-checkout-cone-mode: false
 
-      - name: Create directory
-        uses: ./mkdir-action
+      - name: Download file
+        id: download-file
+        uses: ./download-file-action
         with:
-          path: parent/child
+          url: https://unlicense.org/UNLICENSE
 
-      - name: Check directory
+      - name: Check downloaded file
         shell: bash
-        run: test -d parent/child
+        run: |
+          test "${{ steps.download-file.outputs.path }}" = UNLICENSE
+          openssl dgst -sha256 UNLICENSE | grep -q b5065838cbac452dfc855ba6e6e031481ad2c68406f70d21ead9321374653e6c
