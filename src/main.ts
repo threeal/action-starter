@@ -1,7 +1,11 @@
+import { getInput, setOutput } from "ghakit/io";
 import { logError } from "ghakit/log";
-import { mkdirAction } from "./action.js";
+import { downloadFile } from "./download.js";
 
-await mkdirAction().catch((err: unknown) => {
+try {
+  const path = await downloadFile(getInput("url"));
+  await setOutput("path", path);
+} catch (err) {
   logError(err);
   process.exitCode = 1;
-});
+}

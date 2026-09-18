@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## About This Repository
 
-Minimal GitHub Action starter, TypeScript targeting Node 24, ESM. `src/` contains a placeholder mkdir action — replace it with real action logic when starting a new project.
+Minimal GitHub Action starter, TypeScript targeting Node 24, ESM. `src/` contains a placeholder download-file action — replace it with real action logic when starting a new project.
 
 ## Rules that aren't obvious from the code
 
@@ -19,8 +19,8 @@ Minimal GitHub Action starter, TypeScript targeting Node 24, ESM. `src/` contain
 
 ## Layout
 
-- `src/action.ts` — the action implementation, an exported async function.
-- `src/main.ts` — entry point; calls the action function and handles error logging and exit codes.
+- `src/download.ts` — the download logic, an exported async function; the only part covered by vitest.
+- `src/main.ts` — entry point; reads input, calls the download function, sets output, and handles error logging and exit codes. Left untested in vitest by design — CI verifies it end to end instead.
 - `src/*.test.ts` — colocated with the source they test.
 
 ## Config map
