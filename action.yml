@@ -13,4 +13,4 @@ outputs:
     description: Path of the downloaded file
 runs:
   using: node24
-  main: dist/main.mjs
+  main: dist/main.js

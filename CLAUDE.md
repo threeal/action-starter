@@ -11,10 +11,10 @@ Minimal GitHub Action starter, TypeScript targeting Node 24, ESM. `src/` contain
 ## Rules that aren't obvious from the code
 
 - Import paths must end in `.js`, even when importing `.ts` source files. `tsconfig.json` sets `moduleResolution: node16`, which requires this.
-- `dist/main.mjs` (built by `tsdown` from `src/main.ts`) must be committed — `action.yml` points to it directly as the runtime entry, and CI fails if building produces a diff.
-- `lefthook run pre-commit` auto-fixes formatting/lint and rebuilds `dist/main.mjs`; `fail_on_changes` fails the run if any file changed. If that happens, re-stage the changed files and rerun.
+- `dist/main.js` (built by `rolldown` from `src/main.ts`) must be committed — `action.yml` points to it directly as the runtime entry, and CI fails if building produces a diff.
+- `lefthook run pre-commit` auto-fixes formatting/lint and rebuilds `dist/main.js`; `fail_on_changes` fails the run if any file changed. If that happens, re-stage the changed files and rerun.
 - Vitest's 100% coverage threshold applies to the whole run, not per file. Running a single test file can fail coverage if it imports source another file is responsible for covering — use the full suite for an accurate result.
-- `tsdown` bundles everything at build time, so every package — including runtime dependencies — belongs in `devDependencies`; there's no `dependencies` field to keep in sync.
+- `rolldown` bundles everything at build time, so every package — including runtime dependencies — belongs in `devDependencies`; there's no `dependencies` field to keep in sync.
 - Prettier auto-reorders imports (`prettier-plugin-organize-imports`) — reordering on format is expected, not a bug.
 
 ## Layout
@@ -28,7 +28,7 @@ Minimal GitHub Action starter, TypeScript targeting Node 24, ESM. `src/` contain
 - Type checking — `tsconfig.json`
 - Lint — `eslint.config.ts`
 - Format — `.prettierrc.json`
-- Bundler — `tsdown.config.ts`
+- Bundler — `rolldown.config.ts`
 - Tests + coverage — `vitest.config.ts`
 - Git hooks — `lefthook.yaml`
 - CI — `.github/workflows/ci.yaml`
