@@ -10,7 +10,7 @@
     "eslint": "^10.10.0",
     "ghakit": "^1.0.0",
     "jiti": "^2.7.0",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.8",
     "prettier-plugin-organize-imports": "^4.3.0",
     "rolldown": "^1.2.9",
     "typescript": "^6.0.3",
