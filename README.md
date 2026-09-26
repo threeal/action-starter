@@ -25,8 +25,8 @@ lefthook install
 Replace or extend the template files to fit your project:
 
 - **`.github/workflows/ci.yaml`** — Update or replace the `test` job with jobs that test your action as needed.
-- **`src/action.ts`** — Replace with your actual action logic as an exported async function. Use [`ghakit`](https://www.npmjs.com/package/ghakit) for GitHub Actions utilities — inputs, outputs, logging, and more.
-- **`src/main.ts`** — Entry point that calls the action function and handles errors. Usually doesn't need to change.
+- **`src/download.ts`** — Replace with your own logic called by `src/main.ts`, along with its tests in `src/download.test.ts`.
+- **`src/main.ts`** — Replace with your own action: read inputs, run the logic, set outputs, and handle errors. Use [`ghakit`](https://www.npmjs.com/package/ghakit) for GitHub Actions utilities — inputs, outputs, logging, and more. Usually doesn't need to change.
 - **`action.yml`** — Update the action's name, description, branding, and inputs/outputs to match what your action does.
 - **`CLAUDE.md`** — Replace with guidance specific to your project.
 - **`LICENSE`** — Replace with your preferred license, or keep the [Unlicense](https://unlicense.org/).
@@ -45,12 +45,12 @@ The project enforces 100% code coverage on every run.
 Before committing, run the pre-commit hook to install dependencies, type-check, fix formatting and lint, and build the action:
 
 ```sh
-lefthook run pre-commit
+lefthook run pre-commit --all-files
 ```
 
 If any file changes during the run, re-stage the changed files and retry. The hook also runs automatically on each `git commit` — if it fails, fix the reported issues, re-stage, and commit again.
 
-After committing, push to `main` or open a pull request from another branch — CI will run the pre-commit hook across all files and the unit test suite, and test the action in the CI environment.
+After committing, push to `main` or open a pull request from another branch — CI will run the pre-commit hook across all files, the full test suite, and test the action in the CI environment.
 
 ## Releasing
 
