@@ -2,40 +2,16 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-> **Template notice:** This file describes the template repository itself. If working in a project derived from this template, inform the user that this CLAUDE.md still contains template guidance and should be updated with project-specific content.
+> **Template notice:** This file describes the template repository itself. In a project derived from this template, tell the user it should be replaced with project-specific guidance.
 
 ## About This Repository
 
-Minimal GitHub Action starter, TypeScript targeting Node 24, ESM. `src/` contains a placeholder download-file action — replace it with real action logic when starting a new project.
+A minimal JavaScript GitHub Action starter template. Its only application code is a placeholder download-file action in `src/` — real logic is added by projects derived from it.
 
-## Rules that aren't obvious from the code
+## Gotchas
 
-- Import paths must end in `.js`, even when importing `.ts` source files. `tsconfig.json` sets `moduleResolution: node16`, which requires this.
-- `dist/main.js` (built by `rolldown` from `src/main.ts`) must be committed — `action.yml` points to it directly as the runtime entry, and CI fails if building produces a diff.
-- `lefthook run pre-commit` auto-fixes formatting/lint and rebuilds `dist/main.js`; `fail_on_changes` fails the run if any file changed. If that happens, re-stage the changed files and rerun.
-- Vitest's 100% coverage threshold applies to the whole run, not per file. Running a single test file can fail coverage if it imports source another file is responsible for covering — use the full suite for an accurate result.
-- `rolldown` bundles everything at build time, so every package — including runtime dependencies — belongs in `devDependencies`; there's no `dependencies` field to keep in sync.
-- Prettier auto-reorders imports (`prettier-plugin-organize-imports`) — reordering on format is expected, not a bug.
-
-## Layout
-
-- `src/download.ts` — the download logic, an exported async function; the only part covered by vitest.
-- `src/main.ts` — entry point; reads input, calls the download function, sets output, and handles error logging and exit codes. Left untested in vitest by design — CI verifies it end to end instead.
-- `src/*.test.ts` — colocated with the source they test.
-
-## Config map
-
-- Type checking — `tsconfig.json`
-- Lint — `eslint.config.ts`
-- Format — `.prettierrc.json`
-- Bundler — `rolldown.config.ts`
-- Tests + coverage — `vitest.config.ts`
-- Git hooks — `lefthook.yaml`
-- CI — `.github/workflows/ci.yaml`
-- Dependency updates — `.github/dependabot.yaml`
-- Action inputs/outputs/branding — `action.yml`
-
-## Commands
-
-- `lefthook run pre-commit` — lint/format/build on staged files (`--all-files` to match CI)
-- `pnpm vitest run` — full test suite with coverage
+- `lefthook run pre-commit` skips every job when nothing is staged, even ones that ignore the staged file list — pass `--all-files` to run it outside an actual commit.
+- The pre-commit hook fixes files in place, and the run fails if any file changes. Report that failure and leave the fixes for the user to review and re-stage before committing again.
+- `dist/main.js` is committed build output that `action.yml` runs directly — never edit it by hand; the pre-commit hook rebuilds it from `src/`, and CI fails if it's out of date.
+- Vitest's 100% coverage threshold applies to the whole run, not per file — a single test file can fail on source that other tests cover, so run the full suite (`pnpm vitest run`).
+- `.gitignore` ignores every dotfile and dotdir (`.*`) — a new one needs an explicit `!` exception there or it silently won't be tracked.
