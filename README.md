@@ -42,15 +42,9 @@ pnpm vitest run
 
 The project enforces 100% code coverage on every run.
 
-Before committing, run the pre-commit hook to install dependencies, type-check, fix formatting and lint, and build the action:
+Each `git commit` runs the pre-commit hook registered during setup, which checks your changes and fixes what it can in place. If it fails, fix any reported issues, re-stage the changed files, and commit again.
 
-```sh
-lefthook run pre-commit --all-files
-```
-
-If any file changes during the run, re-stage the changed files and retry. The hook also runs automatically on each `git commit` — if it fails, fix the reported issues, re-stage, and commit again.
-
-After committing, push to `main` or open a pull request from another branch — CI will run the pre-commit hook across all files, the full test suite, and test the action in the CI environment.
+After committing, push to `main` or open a pull request from another branch — CI will run the same checks across all files, plus additional checks of its own.
 
 ## Releasing
 
