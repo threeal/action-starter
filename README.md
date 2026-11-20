@@ -25,8 +25,7 @@ lefthook install
 Replace or extend the template files to fit your project:
 
 - **`.github/workflows/ci.yaml`** — Update or replace the `test` job with jobs that test your action as needed.
-- **`src/download.ts`** — Replace the placeholder file-download function with your own.
-- **`src/main.ts`** — Replace with your own action logic.
+- **`src/`** — Replace the placeholder action logic and tests with your own code.
 - **`action.yml`** — Update the action's name, description, branding, and inputs/outputs to match what your action does.
 - **`CLAUDE.md`** — Replace with guidance specific to your project.
 - **`LICENSE`** — Replace with your preferred license, or keep the [Unlicense](https://unlicense.org/).
@@ -34,13 +33,13 @@ Replace or extend the template files to fit your project:
 
 ## Development
 
-Write code in `src/`, using [`ghakit`](https://www.npmjs.com/package/ghakit) for GitHub Actions utilities such as inputs, outputs, and logging. Test files live alongside source as `*.test.ts`. Run the test suite with:
+Run the tests with coverage through Vitest:
 
 ```sh
 pnpm vitest run
 ```
 
-The project enforces 100% code coverage on every run.
+The project enforces 100% code coverage, counting only files the tests import.
 
 Each `git commit` runs the pre-commit hook registered during setup, which checks your changes and fixes what it can in place. If it fails, fix any reported issues, re-stage the changed files, and commit again.
 
