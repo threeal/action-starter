@@ -3,7 +3,7 @@
   "type": "module",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@tsconfig/node24": "^24.0.5",
+    "@tsconfig/node24": "^24.0.6",
     "@types/node": "^26.6.6",
     "@vitest/coverage-v8": "^5.1.1",
     "eslint": "^10.15.0",
